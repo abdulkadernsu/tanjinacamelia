@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Why brand templates matter more than your hero campaign — Tanjina Camelia</title>
+  <meta name="description" content="The unglamorous bit of brand work that decides everything else: templates. Why the system you build on Monday matters more than the campaign you ship on Friday." />
+  <link rel="stylesheet" href="blog.css" />
+  <!-- FOUC / FOUT guard — hold the page invisible until fonts load. -->
+  <style id="tsc-fouc-guard">
+    html.tsc-loading { background: #ffffff; }
+    html.tsc-loading body { opacity: 0; }
+    body { transition: opacity .3s ease; }
+  </style>
+  <script>
+    document.documentElement.classList.add('tsc-loading');
+    function tscReveal() { document.documentElement.classList.remove('tsc-loading'); }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(tscReveal).catch(tscReveal);
+    } else {
+      window.addEventListener('load', tscReveal);
+    }
+    setTimeout(tscReveal, 1200);
+  </script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="site-nav-pill">
+      <a href="../index.html" class="site-nav-brand">
+        <span class="site-nav-avatar"><img src="../portrait.jpg" alt="" onerror="this.style.display='none'" /></span>
+        <span class="site-nav-name">Tanjina Camelia</span>
+      </a>
+      <ul class="site-nav-links">
+        <li><a href="../index.html#about-me">About</a></li>
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#services">Skills</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="../index.html#tsc-footer" class="site-nav-cta">Contact</a></li>
+      </ul>
+      <button class="site-nav-hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-drawer">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <line x1="4" y1="7"  x2="20" y2="7"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="site-nav-drawer" id="site-nav-drawer" aria-hidden="true">
+    <div class="site-nav-drawer-panel" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="site-nav-drawer-head">
+        <span class="site-nav-drawer-brand">Tanjina Camelia</span>
+        <button class="site-nav-drawer-close" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <ul class="site-nav-drawer-links">
+        <li><a href="../index.html#about-me">About</a></li>
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#services">Skills</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="../index.html#tsc-footer">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <article class="blog-article">
+    <div class="blog-eyebrow">
+      <span class="tag">Process</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>4 min read</span>
+    </div>
+
+    <h1 class="blog-title">Why <em>brand templates</em> matter more than your hero campaign</h1>
+
+    <div class="blog-meta">
+      <div class="blog-meta-avatar">
+        <img src="../portrait.jpg" alt="Tanjina Sultana Camelia" onerror="this.style.display='none'" />
+      </div>
+      <div class="blog-meta-text">
+        <span class="blog-meta-name">Tanjina Sultana Camelia</span>
+        <span class="blog-meta-detail">Apr 28, 2026 · 4 min read</span>
+      </div>
+    </div>
+
+    <div class="blog-cover">
+      <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1600&q=80" alt="Brand guidelines on a desk" loading="lazy" />
+    </div>
+
+    <div class="blog-body">
+      <p>Every brand team has a portfolio of campaigns they love showing off. The work nobody puts on their portfolio — the slide masters, the email signatures, the document templates, the photo crops — is what actually decides whether your brand looks consistent in a customer's eyes.</p>
+
+      <h2>The math no one shows</h2>
+      <p>A hero campaign goes out, gets seen for two weeks, and ends. A slide template is opened twenty times a day, by hundreds of people, for a year, before anyone thinks about replacing it. The campaign produces a finite number of brand impressions. The template produces a continuous stream of them.</p>
+      <p>If the template is wrong, every single one of those impressions chips at the brand. If the template is right, you compound trust quietly, every single day, without any campaign spend.</p>
+
+      <h2>Three templates that punch above their weight</h2>
+      <ul>
+        <li><strong>The internal slide master.</strong> Used in board meetings, client decks, internal training, regulatory submissions. If this is messy, every important room sees your brand poorly.</li>
+        <li><strong>The email signature.</strong> Probably the single most-distributed brand asset in any organisation. Locked-down, on-brand, simple — or chaos by week three.</li>
+        <li><strong>The social-post grid.</strong> Not the showy launch post — the weekly tactical posts. They build the brand cumulatively, not individually.</li>
+      </ul>
+
+      <h2>What "good" looks like</h2>
+      <p>A good template makes the on-brand choice the easy choice. Default fonts, locked colour styles, smart guides for spacing, a "don't" preview right inside the file. If a junior team member can produce a passable asset without asking the brand lead, the template is doing its job. If they have to ask, the template needs more work.</p>
+
+      <blockquote>The most reliable brand asset I've ever shipped wasn't a campaign — it was a master slide deck I spent two weeks getting right. It outlasted the campaign by years.</blockquote>
+
+      <h2>The unsexy career advice</h2>
+      <p>If you're a designer trying to grow inside an in-house team: stop pitching the hero work first. Start by fixing the slide template, the signature, the report cover. Within six months, half the organisation will see your brand more consistently — and you'll be the person quietly responsible for it.</p>
+    </div>
+
+    <div class="blog-footer">
+      <a class="blog-footer-btn" href="index.html">
+        <span>More posts</span>
+        <span class="blog-footer-btn-arrow">→</span>
+      </a>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <h2 class="site-footer-name">TANJINA CAMELIA</h2>
+    <p class="site-footer-tag">Banking branding &amp; communications · Dhaka, Bangladesh</p>
+    <nav class="site-footer-social" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/tanjina-sultana-camelia-43345a290/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=tanjinasultanacamelia2020@gmail.com" target="_blank" rel="noopener" aria-label="Email Tanjina via Gmail">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 5.46v13.91c0 .9-.73 1.63-1.64 1.63h-3.82V11.73L12 16.64 5.45 11.73v9.27H1.64A1.64 1.64 0 010 19.37V5.46c0-2.02 2.31-3.18 3.93-1.96l1.52 1.14L12 9.55l6.55-4.91 1.52-1.14C21.69 2.28 24 3.43 24 5.46z"/></svg>
+      </a>
+    </nav>
+  </footer>
+
+  <script src="site-nav.js"></script>
+</body>
+</html>

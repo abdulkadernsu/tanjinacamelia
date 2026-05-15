@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>How a CSE degree quietly made me a better designer — Tanjina Camelia</title>
+  <meta name="description" content="My background is Computer Science. My work is brand. Here's how engineering thinking quietly shapes the way I design." />
+  <link rel="stylesheet" href="blog.css" />
+  <!-- FOUC / FOUT guard — hold the page invisible until fonts load. -->
+  <style id="tsc-fouc-guard">
+    html.tsc-loading { background: #ffffff; }
+    html.tsc-loading body { opacity: 0; }
+    body { transition: opacity .3s ease; }
+  </style>
+  <script>
+    document.documentElement.classList.add('tsc-loading');
+    function tscReveal() { document.documentElement.classList.remove('tsc-loading'); }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(tscReveal).catch(tscReveal);
+    } else {
+      window.addEventListener('load', tscReveal);
+    }
+    setTimeout(tscReveal, 1200);
+  </script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="site-nav-pill">
+      <a href="../index.html" class="site-nav-brand">
+        <span class="site-nav-avatar"><img src="../portrait.jpg" alt="" onerror="this.style.display='none'" /></span>
+        <span class="site-nav-name">Tanjina Camelia</span>
+      </a>
+      <ul class="site-nav-links">
+        <li><a href="../index.html#about-me">About</a></li>
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#services">Skills</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="../index.html#tsc-footer" class="site-nav-cta">Contact</a></li>
+      </ul>
+      <button class="site-nav-hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-drawer">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <line x1="4" y1="7"  x2="20" y2="7"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="site-nav-drawer" id="site-nav-drawer" aria-hidden="true">
+    <div class="site-nav-drawer-panel" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="site-nav-drawer-head">
+        <span class="site-nav-drawer-brand">Tanjina Camelia</span>
+        <button class="site-nav-drawer-close" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <ul class="site-nav-drawer-links">
+        <li><a href="../index.html#about-me">About</a></li>
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#services">Skills</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="../index.html#tsc-footer">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <article class="blog-article">
+    <div class="blog-eyebrow">
+      <span class="tag">Personal</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>3 min read</span>
+    </div>
+
+    <h1 class="blog-title">How a CSE degree quietly made me a <em>better designer</em></h1>
+
+    <div class="blog-meta">
+      <div class="blog-meta-avatar">
+        <img src="../portrait.jpg" alt="Tanjina Sultana Camelia" onerror="this.style.display='none'" />
+      </div>
+      <div class="blog-meta-text">
+        <span class="blog-meta-name">Tanjina Sultana Camelia</span>
+        <span class="blog-meta-detail">Apr 15, 2026 · 3 min read</span>
+      </div>
+    </div>
+
+    <div class="blog-cover">
+      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=80" alt="Code editor open on a desk" loading="lazy" />
+    </div>
+
+    <div class="blog-body">
+      <p>I graduated in Computer Science & Engineering from North South University. Then I went into branding, marketing and communications. People sometimes ask if I "wasted" the degree. I don't think I did — most days I think the opposite.</p>
+
+      <h2>Engineering teaches you to design <em>systems</em></h2>
+      <p>The single most useful habit I picked up in CSE is thinking in systems rather than artefacts. A function isn't the thing — the contract it fulfils is. The same is true of a logo: the mark isn't the thing, the system around it is. Engineering trained me to look past the surface and ask what structure has to hold for everything else to work.</p>
+
+      <h2>You stop being afraid of constraints</h2>
+      <p>Code lives or dies by constraints — memory, time, browser compatibility, accessibility. Design school often treats constraints as enemies. Engineering treats them as the inputs to the problem. When a brand brief comes with a tight deadline, a fixed colour token system, or a regulator's red lines, I see those as the shape of the problem, not the thing fighting it.</p>
+
+      <h2>Documentation as muscle</h2>
+      <p>One of the boring CSE habits I carry into every brand project: writing things down so the next person can pick it up. Function comments became brand guidelines. Inline docstrings became asset captions. The instinct is the same — make your work legible enough that you can disappear without it breaking.</p>
+
+      <blockquote>The strongest brand decisions I've made weren't aesthetic decisions — they were system decisions. CSE gave me the vocabulary for that long before design did.</blockquote>
+
+      <h2>Where the two stop overlapping</h2>
+      <p>Engineering doesn't teach taste. It doesn't teach you when a kerning fix matters or when a campaign needs to feel warmer. That part is honestly the harder muscle to build, and I'm still building it. But the structural backbone — the part that decides whether work scales, holds up, and survives the rest of an organisation touching it — that part came from CSE, and I'm grateful every week that it did.</p>
+    </div>
+
+    <div class="blog-footer">
+      <a class="blog-footer-btn" href="index.html">
+        <span>More posts</span>
+        <span class="blog-footer-btn-arrow">→</span>
+      </a>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <h2 class="site-footer-name">TANJINA CAMELIA</h2>
+    <p class="site-footer-tag">Banking branding &amp; communications · Dhaka, Bangladesh</p>
+    <nav class="site-footer-social" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/tanjina-sultana-camelia-43345a290/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=tanjinasultanacamelia2020@gmail.com" target="_blank" rel="noopener" aria-label="Email Tanjina via Gmail">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 5.46v13.91c0 .9-.73 1.63-1.64 1.63h-3.82V11.73L12 16.64 5.45 11.73v9.27H1.64A1.64 1.64 0 010 19.37V5.46c0-2.02 2.31-3.18 3.93-1.96l1.52 1.14L12 9.55l6.55-4.91 1.52-1.14C21.69 2.28 24 3.43 24 5.46z"/></svg>
+      </a>
+    </nav>
+  </footer>
+
+  <script src="site-nav.js"></script>
+</body>
+</html>

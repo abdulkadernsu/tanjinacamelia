@@ -1,0 +1,27 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / build artefacts (in case anything gets added later)
+node_modules/
+dist/
+build/
+*.log
+
+# Vercel
+.vercel/
+
+# Claude Code session config
+.claude/
+
+# Misc
+line542.txt

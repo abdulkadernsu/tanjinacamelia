@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Portfolio — Tanjina Camelia</title>
+  <meta name="description" content="Selected creative work by Tanjina Sultana Camelia — brand campaigns, identity systems, event activations and editorial design." />
+  <link rel="icon" type="image/jpeg" href="portrait.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <!-- FOUC / FOUT guard: hold the page invisible until Geist + Great Vibes
+       finish loading, then fade in. Prevents the browser's default
+       fallback font from flashing on the screen during cold loads. -->
+  <style id="tsc-fouc-guard">
+    html.tsc-loading { background: #ffffff; }
+    html.tsc-loading body { opacity: 0; }
+    body { transition: opacity .3s ease; }
+  </style>
+  <script>
+    document.documentElement.classList.add('tsc-loading');
+    function tscReveal() { document.documentElement.classList.remove('tsc-loading'); }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(tscReveal).catch(tscReveal);
+    } else {
+      window.addEventListener('load', tscReveal);
+    }
+    // Hard backstop — never leave the page blank for more than 1.2s.
+    setTimeout(tscReveal, 1200);
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Geist', 'Geist Placeholder', sans-serif;
+      background: #ffffff;
+      color: #05080c;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* Sticky top nav (same pattern as blog pages) */
+    .pf-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 24px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      border-bottom: 1px solid rgba(5, 8, 12, 0.06);
+    }
+    .pf-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #05080c;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .pf-back:hover { opacity: .7; transform: translateX(-2px); }
+    .pf-back-arrow {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #05080c;
+      color: #ffffff;
+      font-size: 13px;
+    }
+    .pf-brand { font-weight: 700; font-size: 14px; letter-spacing: -0.01em; }
+
+    /* Hero */
+    .pf-hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: clamp(48px, 7vw, 96px) clamp(24px, 4vw, 60px) clamp(32px, 4vw, 48px);
+    }
+    .pf-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0 0 16px 0;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #05080c;
+    }
+    .pf-hero-eyebrow svg { width: 16px; height: 16px; }
+    .pf-hero-title {
+      margin: 0 0 16px 0;
+      font-size: clamp(40px, 7vw, 88px);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: #05080c;
+    }
+    .pf-hero-title em {
+      font-family: 'Great Vibes', cursive;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.05em;
+    }
+    .pf-hero-sub {
+      max-width: 620px;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.65;
+      color: rgba(5, 8, 12, 0.6);
+    }
+
+    /* Filter chips */
+    .pf-filters {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 4vw, 60px) 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pf-chip {
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid rgba(5, 8, 12, 0.12);
+      background: #ffffff;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+      color: #05080c;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, border-color .18s ease;
+    }
+    .pf-chip:hover { background: rgba(5, 8, 12, 0.05); }
+    .pf-chip.is-active {
+      background: #05080c;
+      border-color: #05080c;
+      color: #ffffff;
+    }
+
+    /* Grid */
+    .pf-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 4vw, 60px) clamp(64px, 9vw, 120px);
+      display: grid;
+      grid-template-columns: 1fr;        /* mobile: 1 per row */
+      gap: 20px;
+    }
+    @media (min-width: 700px) {
+      .pf-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));   /* tablet: 2 per row */
+        gap: 24px;
+      }
+    }
+    @media (min-width: 1000px) {
+      .pf-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));   /* desktop: 3 per row */
+        gap: 28px;
+      }
+    }
+
+    /* Card */
+    .pf-card {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f5f5f5;
+      cursor: pointer;
+      transform: translateY(0);
+      transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+    .pf-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.18);
+    }
+    .pf-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s cubic-bezier(.22,1,.36,1);
+    }
+    .pf-card:hover .pf-card-img { transform: scale(1.05); }
+
+    /* Hover overlay with title + description */
+    .pf-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.85) 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px 22px;
+      opacity: 1;
+      transition: opacity .25s ease;
+    }
+    .pf-card-title {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+    }
+    .pf-card-desc {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.78);
+      /* Limit description to ~2 lines */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .pf-card-tag {
+      align-self: flex-start;
+      margin-bottom: 10px;
+      padding: 3px 10px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .pf-card-zoom {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.92);
+      color: #05080c;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+      opacity: 0;
+      transform: scale(0.85);
+      transition: opacity .25s ease, transform .25s cubic-bezier(.22,1,.36,1);
+    }
+    .pf-card:hover .pf-card-zoom { opacity: 1; transform: scale(1); }
+
+    /* ── Lightbox ─────────────────────────────────────────────────────── */
+    .pf-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(5, 8, 12, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(20px, 4vw, 60px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+    .pf-lightbox.is-open { opacity: 1; pointer-events: auto; }
+    .pf-lightbox-img-wrap {
+      position: relative;
+      max-width: min(1400px, 100%);
+      max-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .pf-lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+    }
+    .pf-lightbox-caption {
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.92);
+      text-align: center;
+    }
+    .pf-lightbox-caption h3 {
+      margin: 0 0 4px 0;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .pf-lightbox-caption p {
+      margin: 0;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.55;
+    }
+    .pf-lightbox-close {
+      position: absolute;
+      top: clamp(16px, 3vw, 32px);
+      right: clamp(16px, 3vw, 32px);
+      width: 44px;
+      height: 44px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .pf-lightbox-close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
+    .pf-lightbox-prev,
+    .pf-lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background .15s ease;
+    }
+    .pf-lightbox-prev { left: clamp(16px, 3vw, 32px); }
+    .pf-lightbox-next { right: clamp(16px, 3vw, 32px); }
+    .pf-lightbox-prev:hover,
+    .pf-lightbox-next:hover { background: rgba(255, 255, 255, 0.2); }
+
+    body.pf-lock { overflow: hidden; }
+
+    @media (max-width: 700px) {
+      .pf-grid { padding-bottom: 64px; }
+      .pf-card-title { font-size: 16px; }
+      .pf-card-desc { font-size: 12px; }
+      .pf-lightbox-prev,
+      .pf-lightbox-next { width: 40px; height: 40px; }
+    }
+
+    /* ── Shared sub-page navbar + footer ───────────────────────────────── */
+    .site-nav { position: sticky; top: 20px; z-index: 60; display: flex; justify-content: center; pointer-events: none; padding: 0 16px; margin-bottom: 8px; }
+    .site-nav-pill { pointer-events: auto; display: flex; align-items: center; overflow: hidden; border-radius: 9999px; border: 1px solid rgba(0,0,0,.08); background: #fff; padding: 6px 8px 6px 8px; gap: 22px; box-shadow: 0 6px 22px rgba(15,23,42,.08); }
+    @media (min-width: 768px) { .site-nav-pill { gap: 40px; padding: 8px 10px 8px 8px; } }
+    .site-nav-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; }
+    .site-nav-avatar { position: relative; display: grid; place-items: center; height: 36px; width: 36px; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg,#2d2d2d,#0a0a0a); color: #fff; flex: none; }
+    .site-nav-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .site-nav-name { font-size: 13px; font-weight: 700; color: #05080c; white-space: nowrap; padding-right: 4px; }
+    .site-nav-links { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; white-space: nowrap; }
+    .site-nav-links a { font-size: 13px; font-weight: 600; color: #05080c; text-decoration: none; transition: opacity .18s ease; }
+    .site-nav-links a:hover { opacity: .7; }
+    .site-nav-links a.site-nav-cta { display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: linear-gradient(180deg,#1c2128 0%,#05080c 100%); padding: 8px 18px; color: #fff !important; font-weight: 700; outline: 1px solid rgba(0,0,0,.6); outline-offset: -1px; box-shadow: inset 0 1px 0 rgba(255,255,255,.22), inset 0 -1px 0 rgba(0,0,0,.45), 0 2px 5px rgba(0,0,0,.18); transition: transform .18s ease, box-shadow .2s ease; }
+    .site-nav-links a.site-nav-cta:hover { transform: translateY(-1px); }
+    .site-nav-hamburger { display: none; align-items: center; justify-content: center; flex: none; width: 38px; height: 38px; margin-left: auto; background: #05080c; border: 0; padding: 0; cursor: pointer; border-radius: 50%; color: #fff; transition: background .15s ease, transform .15s ease; }
+    .site-nav-hamburger:hover { background: #1a1f26; transform: scale(1.05); }
+    .site-nav-hamburger svg { display: block; pointer-events: none; }
+    @media (max-width: 767px) {
+      .site-nav-links { display: none !important; }
+      .site-nav-hamburger { display: inline-flex !important; }
+      .site-nav-pill { padding: 6px 6px 6px 8px !important; gap: 8px !important; }
+      .site-nav-avatar { height: 32px !important; width: 32px !important; }
+    }
+    .site-nav-drawer { position: fixed; inset: 0; z-index: 100; background: rgba(5,8,12,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+    .site-nav-drawer.is-open { opacity: 1; pointer-events: auto; }
+    .site-nav-drawer-panel { position: absolute; top: 0; right: 0; height: 100%; width: min(360px, 86vw); background: #05080c; color: #fff; padding: 20px 24px 32px; display: flex; flex-direction: column; gap: 28px; transform: translateX(100%); transition: transform .35s cubic-bezier(.22,1,.36,1); box-shadow: -12px 0 40px rgba(0,0,0,.35); }
+    .site-nav-drawer.is-open .site-nav-drawer-panel { transform: translateX(0); }
+    .site-nav-drawer-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .site-nav-drawer-brand { font-size: 14px; font-weight: 600; color: #fff; }
+    .site-nav-drawer-close { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: rgba(255,255,255,.08); border: 0; color: #fff; border-radius: 50%; cursor: pointer; transition: background .15s ease, transform .15s ease; }
+    .site-nav-drawer-close:hover { background: rgba(255,255,255,.16); transform: rotate(90deg); }
+    .site-nav-drawer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+    .site-nav-drawer-links a { display: block; padding: 14px 6px; font-size: clamp(22px, 5.5vw, 28px); font-weight: 500; letter-spacing: -0.02em; color: #fff !important; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.06); transition: padding-left .2s ease, color .2s ease; }
+    .site-nav-drawer-links a:hover { padding-left: 14px; color: rgba(255,255,255,.85) !important; }
+    body.site-drawer-open { overflow: hidden; }
+
+    .site-footer { position: relative; z-index: 50; width: 100%; background: #05080c; color: #fff; padding: clamp(56px, 9vw, 120px) clamp(24px, 4vw, 60px) clamp(48px, 6vw, 80px); text-align: center; margin-top: 80px; }
+    .site-footer-name { margin: 0; font-size: clamp(40px, 8vw, 110px); font-weight: 500; letter-spacing: -0.03em; line-height: 0.95; color: #fff; text-transform: uppercase; }
+    .site-footer-tag { margin: clamp(14px, 1.8vw, 24px) auto 0; max-width: 520px; font-size: 14px; color: rgba(255,255,255,.55); }
+    .site-footer-social { display: inline-flex; align-items: center; gap: 12px; margin: clamp(30px, 4vw, 48px) auto 0; padding: 8px 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 100px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .site-footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: #fff; text-decoration: none; background: transparent; transition: background .2s ease, transform .2s ease; }
+    .site-footer-social a:hover { background: rgba(255,255,255,.16); transform: translateY(-2px) scale(1.05); }
+    .site-footer-social svg { width: 20px; height: 20px; fill: currentColor; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="site-nav-pill">
+      <a href="index.html" class="site-nav-brand">
+        <span class="site-nav-avatar"><img src="portrait.jpg" alt="" onerror="this.style.display='none'" /></span>
+        <span class="site-nav-name">Tanjina Camelia</span>
+      </a>
+      <ul class="site-nav-links">
+        <li><a href="index.html#about-me">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#services">Skills</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="index.html#tsc-footer" class="site-nav-cta">Contact</a></li>
+      </ul>
+      <button class="site-nav-hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-drawer">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <line x1="4" y1="7"  x2="20" y2="7"  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="site-nav-drawer" id="site-nav-drawer" aria-hidden="true">
+    <div class="site-nav-drawer-panel" role="dialog" aria-modal="true" aria-label="Navigation">
+      <div class="site-nav-drawer-head">
+        <span class="site-nav-drawer-brand">Tanjina Camelia</span>
+        <button class="site-nav-drawer-close" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <ul class="site-nav-drawer-links">
+        <li><a href="index.html#about-me">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#services">Skills</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="index.html#tsc-footer">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="pf-hero">
+    <p class="pf-hero-eyebrow">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <path d="m1 32 25 6 6 25 6-25 25-6-25-6-6-25-6 25z" fill="#05080c"/>
+      </svg>
+      <span>Selected work</span>
+    </p>
+    <h1 class="pf-hero-title">My <em>Portfolio</em></h1>
+    <p class="pf-hero-sub">A selection of brand campaigns, identity systems, event activations and editorial work — built across in-house roles and freelance briefs. Click any thumbnail to view the full piece.</p>
+  </section>
+
+  <div class="pf-filters" id="pf-filters">
+    <button class="pf-chip is-active" type="button" data-filter="all">All</button>
+    <button class="pf-chip" type="button" data-filter="branding">Branding</button>
+    <button class="pf-chip" type="button" data-filter="campaign">Campaigns</button>
+    <button class="pf-chip" type="button" data-filter="digital">Digital</button>
+    <button class="pf-chip" type="button" data-filter="event">Events</button>
+    <button class="pf-chip" type="button" data-filter="editorial">Editorial</button>
+  </div>
+
+  <main class="pf-grid" id="pf-grid"><!-- Cards injected by JS --></main>
+
+  <div class="pf-lightbox" id="pf-lightbox" aria-hidden="true" role="dialog" aria-label="Project preview">
+    <button class="pf-lightbox-prev" type="button" aria-label="Previous">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M15 5 L8 12 L15 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="pf-lightbox-img-wrap">
+      <img class="pf-lightbox-img" id="pf-lightbox-img" src="" alt="" />
+      <div class="pf-lightbox-caption" id="pf-lightbox-caption">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+    <button class="pf-lightbox-next" type="button" aria-label="Next">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M9 5 L16 12 L9 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="pf-lightbox-close" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M6 6 L18 18 M18 6 L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+    // ───── Portfolio data ─────
+    // Replace `img` with your real artwork files. Each card is 400×400 thumbnail
+    // in the grid; the same image is shown full-size in the lightbox.
+    var FRAMER = './assets/';
+    var WORKS = [
+      {
+        category: 'campaign',
+        tag: 'Festive Poster',
+        title: 'Bengali New Year Poster',
+        desc: 'Festive poster designed for Commercial Bank of Ceylon to mark Pohela Boishakh — the Bengali New Year. Rolled out across branches and the bank’s social channels during the celebration.',
+        img: './Portfolio/Wishing You a Bright and Joyful New Beginning this Boishakh! (1).png'
+      },
+      {
+        category: 'campaign',
+        tag: 'Recognition Poster',
+        title: 'AAA Poster for CBC',
+        desc: 'Announcement poster celebrating Commercial Bank of Ceylon’s prestigious AAA credit rating. Designed to spotlight the milestone across internal channels, branches and the bank’s social presence.',
+        img: './Portfolio/AAA.png'
+      },
+      {
+        category: 'campaign',
+        tag: 'Product Poster',
+        title: 'Student File Poster',
+        desc: 'Student-friendly poster promoting Commercial Bank of Ceylon’s simple, hassle-free Student File account-opening process. Concept, art direction and design — I also stepped in as the model for the campaign.',
+        img: './Portfolio/572004937_122223801008099728_2496725548815738090_n.jpg'
+      },
+      {
+        category: 'campaign',
+        tag: 'Festive Greeting',
+        title: 'Buddha Purnima Greeting',
+        desc: 'Reverent festive poster for Commercial Bank of Ceylon — Bangladesh Operations marking Buddha Purnima. A calm blue-and-jade composition centred on imagery of the Buddha, paired with a message of peace, compassion and harmony for the bank’s branch and social channels.',
+        img: './Portfolio/685588310_122244798080099728_455839807493606233_n.jpg'
+      },
+      {
+        category: 'campaign',
+        tag: 'Commemorative Poster',
+        title: 'International Women’s Day Poster',
+        desc: 'Commemorative poster for Commercial Bank of Ceylon — Bangladesh Operations marking International Women’s Day. An illustrated collage of women across banking, healthcare, education and craft, paired with the bank’s pledge to rights, justice and action for all women and girls.',
+        img: './Portfolio/647345263_122238970898099728_7301498641687933234_n.jpg'
+      },
+      {
+        category: 'editorial',
+        tag: 'Internal Comms',
+        title: 'AML Awareness EDM',
+        desc: 'Internal awareness EDM for Commercial Bank of Ceylon — Bangladesh Operations on spotting unusual cash transactions. Structured into three clear steps — Know the Signs, Identify the Red Flags, Report & Respond — to support frontline staff in upholding AML and CFT compliance.',
+        img: './Portfolio/EDM 3.png'
+      },
+      {
+        category: 'campaign',
+        tag: 'Commemorative Poster',
+        title: 'International Workers’ Day Tribute',
+        desc: 'Tribute poster for Commercial Bank of Ceylon — Bangladesh Operations marking International Workers’ Day on 1st May. The numeral “1” is composed entirely from photographs of working people across professions — a quiet visual nod to the workforce that keeps society running.',
+        img: './Portfolio/685090976_122244808832099728_664688741022146511_n.jpg'
+      },
+      {
+        category: 'campaign',
+        tag: 'Service Campaign',
+        title: 'Offshore Banking Poster',
+        desc: 'Print-ready campaign poster for Commercial Bank of Ceylon’s offshore banking and international trade services. A panoramic shipping-port image anchors the line “A Century of Global Expertise, Enriched with Local Insight”, with a multi-currency strip — USD, EUR, GBP, JPY, CNY and more — signalling the bank’s worldwide reach.',
+        img: './Portfolio/offshore-newPrintReady.jpg'
+      },
+      {
+        category: 'digital',
+        tag: 'Web Design',
+        title: 'Mitora — Website UI Design',
+        desc: 'Landing-page UI for Mitora, an AI content-creation product. A dark, conversion-focused hero with neon-green accents, modular AI-feature callouts (AI-Enhanced Creativity, AI Writing Precision) and clear trust signals — concept, art direction and full UI by me.',
+        img: './Portfolio/website.jpg'
+      },
+      {
+        category: 'branding',
+        tag: 'Logo Design',
+        title: 'Afro Tour & Travels — Logomark',
+        desc: 'Logomark for Afro Tour & Travels — a travel agency focused on the African continent. A warm gold silhouette of Africa doubles as the canvas for an acacia tree in negative space, with Madagascar as a small accent. Earthy maroon, gold and white palette — concept and final mark by me.',
+        img: './Portfolio/afro-tour.jpg'
+      },
+      {
+        category: 'branding',
+        tag: 'Logo Design',
+        title: 'Heavens Bowl — Logo Design',
+        desc: 'Playful logo for Heavens Bowl — a healthy-eating brand built around fruit bowls. A friendly blue bowl character with a halo and angel wings carries the “Your bowl of Health” tagline, with the bowl content reading as a literal heaven of fruit. Concept and final mark by me.',
+        img: './Portfolio/heaven bowl.png'
+      }
+    ];
+
+    var grid = document.getElementById('pf-grid');
+    var filters = document.getElementById('pf-filters');
+    var lightbox = document.getElementById('pf-lightbox');
+    var lbImg = document.getElementById('pf-lightbox-img');
+    var lbCap = document.getElementById('pf-lightbox-caption');
+    var lbPrev = lightbox.querySelector('.pf-lightbox-prev');
+    var lbNext = lightbox.querySelector('.pf-lightbox-next');
+    var lbClose = lightbox.querySelector('.pf-lightbox-close');
+
+    var visibleIndices = [];     // indices into WORKS for current filter
+    var currentIdx = 0;          // pointer inside visibleIndices
+
+    function renderCards(filter) {
+      grid.innerHTML = '';
+      visibleIndices = [];
+      WORKS.forEach(function (w, i) {
+        if (filter !== 'all' && w.category !== filter) return;
+        var card = document.createElement('div');
+        card.className = 'pf-card';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', 'Open ' + w.title);
+        card.dataset.idx = String(i);
+        card.innerHTML =
+          '<img class="pf-card-img" src="' + w.img + '" alt="' + w.title + '" loading="lazy" />' +
+          '<div class="pf-card-zoom" aria-hidden="true">' +
+            '<svg viewBox="0 0 24 24" width="16" height="16">' +
+              '<circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="2"/>' +
+              '<path d="M16 16 L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+            '</svg>' +
+          '</div>' +
+          '<div class="pf-card-overlay">' +
+            '<span class="pf-card-tag">' + w.tag + '</span>' +
+            '<h3 class="pf-card-title">' + w.title + '</h3>' +
+            '<p class="pf-card-desc">' + w.desc + '</p>' +
+          '</div>';
+        grid.appendChild(card);
+        visibleIndices.push(i);
+      });
+    }
+
+    function openLightbox(workIdx) {
+      var pos = visibleIndices.indexOf(workIdx);
+      if (pos < 0) return;
+      currentIdx = pos;
+      showCurrent();
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('pf-lock');
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('pf-lock');
+    }
+    function showCurrent() {
+      var w = WORKS[visibleIndices[currentIdx]];
+      if (!w) return;
+      lbImg.src = w.img;
+      lbImg.alt = w.title;
+      lbCap.querySelector('h3').textContent = w.title;
+      lbCap.querySelector('p').textContent = w.desc;
+    }
+    function step(delta) {
+      if (!visibleIndices.length) return;
+      currentIdx = (currentIdx + delta + visibleIndices.length) % visibleIndices.length;
+      showCurrent();
+    }
+
+    // ───── Wire events ─────
+    grid.addEventListener('click', function (e) {
+      var card = e.target.closest('.pf-card');
+      if (!card) return;
+      openLightbox(+card.dataset.idx);
+    });
+    grid.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var card = e.target.closest('.pf-card');
+      if (!card) return;
+      e.preventDefault();
+      openLightbox(+card.dataset.idx);
+    });
+
+    filters.addEventListener('click', function (e) {
+      var chip = e.target.closest('.pf-chip');
+      if (!chip) return;
+      filters.querySelectorAll('.pf-chip').forEach(function (c) {
+        c.classList.toggle('is-active', c === chip);
+      });
+      renderCards(chip.dataset.filter);
+    });
+
+    lbPrev.addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+    lbNext.addEventListener('click', function (e) { e.stopPropagation(); step(1); });
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape')    closeLightbox();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
+    });
+
+    // First render
+    renderCards('all');
+  })();
+  </script>
+
+  <footer class="site-footer">
+    <h2 class="site-footer-name">TANJINA CAMELIA</h2>
+    <p class="site-footer-tag">Banking branding &amp; communications · Dhaka, Bangladesh</p>
+    <nav class="site-footer-social" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/tanjina-sultana-camelia-43345a290/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=tanjinasultanacamelia2020@gmail.com" target="_blank" rel="noopener" aria-label="Email Tanjina via Gmail">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 5.46v13.91c0 .9-.73 1.63-1.64 1.63h-3.82V11.73L12 16.64 5.45 11.73v9.27H1.64A1.64 1.64 0 010 19.37V5.46c0-2.02 2.31-3.18 3.93-1.96l1.52 1.14L12 9.55l6.55-4.91 1.52-1.14C21.69 2.28 24 3.43 24 5.46z"/></svg>
+      </a>
+    </nav>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+    var btn = document.querySelector('.site-nav-hamburger');
+    var draw = document.getElementById('site-nav-drawer');
+    if (!btn || !draw) return;
+    var close = draw.querySelector('.site-nav-drawer-close');
+    var links = draw.querySelectorAll('.site-nav-drawer-links a');
+    function open() {
+      draw.classList.add('is-open');
+      draw.setAttribute('aria-hidden', 'false');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('site-drawer-open');
+    }
+    function shut() {
+      draw.classList.remove('is-open');
+      draw.setAttribute('aria-hidden', 'true');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('site-drawer-open');
+    }
+    btn.addEventListener('click', function () { draw.classList.contains('is-open') ? shut() : open(); });
+    close && close.addEventListener('click', shut);
+    draw.addEventListener('click', function (e) { if (e.target === draw) shut(); });
+    Array.prototype.forEach.call(links, function (a) { a.addEventListener('click', shut); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && draw.classList.contains('is-open')) shut();
+    });
+  })();
+  </script>
+</body>
+</html>
